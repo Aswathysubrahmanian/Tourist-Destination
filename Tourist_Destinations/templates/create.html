@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6">
+                     Place :   {{ form.place }}
+                    </div>
+                    <div class="col-md-6">
+                    Name :    {{ form.name }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                    Weather :    {{ form.weather }}
+                    </div>
+                    <div class="col-md-6">
+                        District :    {{ form.district }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                     state :   {{ form.state }}
+                    </div>
+                    <div class="col-md-6">
+                     Map Link :   {{ form.map_link }}
+                    </div>
+                </div>
+              
+                    <div class="col-md-12">
+                    Image :    {{ form.image }}
+                    </div>
+                    <div class="col-md-12">
+                        Description :   {{ form.description }}
+                    </div>
+              <Br></Br>
+              <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="submit">CREATE</button>
+             
+              </div>
+            </form>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container mt-5">
+    <div class="row">
+        {% for tourist in destination %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{{ tourist.image.url }}" class="card-img-top p-2" alt="{{tourist.name }}" style="height:200px;width:412px;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ tourist.place }}</h5>
+                    <p class="card-text">{{ tourist.name }}</p>
+                    <a href="details-view/{{tourist.id}}/ " class="btn btn-primary">See Details</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

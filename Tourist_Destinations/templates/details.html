@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+<div class="card mt-5">
+    <div class="card-header">
+        <div class="row">
+            <h5 class="col-md-7">{{ api_data.name }}</h5>
+            <div class="col-md-5 text-md-right">
+                <a href="/update-destination/{{ api_data.id }}" class="btn btn-warning mr-2">Update</a>
+                <a href="/delete-destination/{{ api_data.id }}" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{ api_data.image }}" class="img-fluid" alt="{{ api_data.place }}" style="height:200px;width:200px;">
+            </div>
+            <div class="col-md-6">
+                <p class="card-title">Place: {{ api_data.place }}</p>
+                <p class="card-text">Weather: {{ api_data.weather }}</p>
+                <p class="card-text">District: {{ api_data.district }}</p>
+                <p class="card-text">State: {{ api_data.state }}</p>
+                <p class="card-text">Google Map: <a href="{{ api_data.map_link }}">Route map</a></p>
+            </div>
+        </div>
+        <p class="card-text mt-3">About the Place: {{ api_data.description }}</p>
+    </div>
+</div></div>
+{% endblock %}
